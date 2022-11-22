@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p th:text="${descanso}"/>
+    </body>
+   <form name="formulario" method="post" action="/hello">
+  <!-- Datos del formulario -->
+   Digite Cuanto Tardo: <input type="number" id="age" name="age" />
+  <input type="submit" value="Ya tome el descanso, ahora voy a empezar de nuevo" /> <br><br>
+</form>
+    Fecha y Hora Actual:
+<input type="text" id="currentDateTime">
+<br><br>
+<script>
+  var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+  document.getElementById("currentDateTime").value = dateTime;
+</script> <br><br>
+<html>
+<head>
+    <script type="text/javascript">
+        var cronometro;
+        function detenerse()
+        {
+            clearInterval(cronometro);
+  
+       }
+       function carga()
+       {
+           contador_s =0;
+           contador_m =0;
+           s = document.getElementById("segundos");
+           m = document.getElementById("minutos");
+           
+           cronometro = setInterval(
+                   function(){
+                       if(contador_s==60)
+                       {
+                           contador_s=0;
+                           contador_m++;
+                           m.innerHTML = contador_m;
+                           if(contador_m==0)
+                           {
+                               contador_m=0;
+                           }
+                       }
+                       s.innerHTML = contador_s;
+                       contador_s++;
+                   }
+                   ,1000);
+       }
+    </script> 
+</head>
+<body onload="carga()"> 
+    <p> 
+        <span id="minutos">0</span>:<span id="segundos">0</span>  
+    </p> 
+</body> <br><br>
+</html>
+</html>
