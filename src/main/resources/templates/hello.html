@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p th:text="${saludo}"/>
+    </body>
+   <form name="formulario" method="post" action="/tiemporecorrido">
+  <!-- Datos del formulario -->
+  Nombre: <input type="text" name="Nombre" />
+  <!-- Botón de envío de formulario -->
+  Cedula: <input type="number" id="age" name="age" />
+  <input type="submit" value="Iniciar Recorrido" /> <br><br>
+</form>
+    Fecha y Hora Actual:
+<input type="text" id="currentDateTime">
+<br><br>
+<script>
+  var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+  document.getElementById("currentDateTime").value = dateTime;
+</script>
+</html>
